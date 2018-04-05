@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IAudio.Views.LangAudio"
+              NavigationPage.HasNavigationBar="False"
+              BackgroundImage="background.png"
+               xmlns:Validations="clr-namespace:IAudioXamarin.Validations" 
+              xmlns:ViewModel=  "clr-namespace:IAudio.ViewModel"  >
+    <ContentPage.BindingContext>
+        <ViewModel:LangIAudioViewModel></ViewModel:LangIAudioViewModel>
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                 AbsoluteLayout.LayoutFlags="All" Spacing="10" Margin="20,0,20,0" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="10"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image  
+                        Source="back.png"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                          TranslationX="-20">>
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavToMainPage}"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+
+                    </Image>
+                    <Label
+                        Text="LANG IAUDIO"
+                        TextColor="#ffffff"
+                        FontSize="20"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"/>
+                    <Image Source="setting.png" Grid.Row="0" Grid.Column="2" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavToSettingPage}"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+                <!-- Content Page -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView 
+                        BackgroundColor="#376799"
+                        Opacity="1"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="5"
+                        Grid.RowSpan="2"
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill"/>
+                    <Button
+                        BackgroundColor="Transparent"
+                        Opacity="1"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="5"
+                        Grid.RowSpan="2"
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill"
+                        Command="{Binding NavToNowPlaying}"/>
+                    <Image  
+                        Source="completed1.png"
+                        TranslationX="10"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Grid.RowSpan="2"                        
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ToggleStatusIcon}"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label
+                        Text="Introduction"
+                        TextColor="#ffffff"
+                        FontSize="20"
+                        TranslationX="12"
+                        TranslationY="2"
+                        Grid.Row="0"
+                        Grid.Column="3"
+                   
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Start">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavToNowPlaying}"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+
+                    </Label>
+                    <Label
+                        Text="Completed"
+                        TextColor="#ffffff"
+                        FontSize="20"
+                         TranslationX="15"
+                        TranslationY="-5"
+                        Grid.Row="1"
+                       Grid.Column="3"
+                   
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Start">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavToNowPlaying}"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView 
+                        BackgroundColor="#376799"
+                        Opacity=".8"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="5"
+                        Grid.RowSpan="2"
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill"/>
+                    <Button
+                        BackgroundColor="Transparent"
+                        Opacity="1"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="5"
+                        Grid.RowSpan="2"
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill"
+                        Command="{Binding NavToNowPlaying}"/>
+                    <Image  
+                         Source="{Binding StatusIcon1}"
+                        TranslationX="10"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Grid.RowSpan="2"                        
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ToggleStatusIcon1}"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+
+                    </Image>
+                    <Label
+                        Text="Advanced Lesson 1"
+                        TextColor="#ffffff"
+                        FontSize="20"
+                        TranslationX="12"
+                        TranslationY="2"
+                        Grid.Row="0"
+                        Grid.Column="3"
+                   
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Start">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavToNowPlaying}"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label
+                        Text="{Binding TextStatus1}"
+                        TextColor="#ffffff"
+                        FontSize="20"
+                         TranslationX="15"
+                        TranslationY="-5"
+                        Grid.Row="1"
+                       Grid.Column="3"
+                   
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Start">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NavToNowPlaying}"></TapGestureRecognizer>
+                            </Label.GestureRecognizers>
+                        </Label>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView 
+                        BackgroundColor="#376799"
+                        Opacity="1"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="5"
+                        Grid.RowSpan="2"
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill"/>
+                    <Button
+                        BackgroundColor="Transparent"
+                        Opacity="1"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="5"
+                        Grid.RowSpan="2"
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill"
+                        Command="{Binding NavToNowPlaying}"/>
+                    <Image  
+                        Source="{Binding StatusIcon2}"
+                        TranslationX="10"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Grid.RowSpan="2"                        
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ToggleStatusIcon2}"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+
+                    </Image>
+                    <Label
+                        Text="Advanced Lesson 2"
+                        TextColor="#ffffff"
+                        FontSize="20"
+                        TranslationX="12"
+                        TranslationY="2"
+                        Grid.Row="0"
+                        Grid.Column="3"
+                   
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Start">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavToNowPlaying}"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label
+                         Text="{Binding TextStatus2}"
+                        TextColor="#ffffff"
+                        FontSize="20"
+                         TranslationX="15"
+                        TranslationY="-5"
+                        Grid.Row="1"
+                       Grid.Column="3"
+                   
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Start">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavToNowPlaying}"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView 
+                        BackgroundColor="#376799"
+                        Opacity=".8"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="5"
+                        Grid.RowSpan="2"
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill"/>
+                    <Button
+                        BackgroundColor="Transparent"
+                        Opacity="1"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="5"
+                        Grid.RowSpan="2"
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill"
+                        Command="{Binding NavToNowPlaying}"/>
+                    <Image  
+                         Source="{Binding StatusIcon3}"
+                        TranslationX="10"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Grid.RowSpan="2"                        
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ToggleStatusIcon3}"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label
+                        Text="Advanced Lesson 3"
+                        TextColor="#ffffff"
+                        FontSize="20"
+                        TranslationX="12"
+                        TranslationY="2"
+                        Grid.Row="0"
+                        Grid.Column="3"
+                   
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Start">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavToNowPlaying}"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label
+                         Text="{Binding TextStatus3}"
+                        TextColor="#ffffff"
+                        FontSize="20"
+                         TranslationX="15"
+                        TranslationY="-5"
+                        Grid.Row="1"
+                       Grid.Column="3"
+                   
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Start">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavToNowPlaying}"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView 
+                        BackgroundColor="#376799"
+                        Opacity="1"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="5"
+                        Grid.RowSpan="2"
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill"/>
+                    <Button
+                        BackgroundColor="Transparent"
+                        Opacity="1"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="5"
+                        Grid.RowSpan="2"
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill"
+                        Command="{Binding NavToNowPlaying}"/>
+                    <Image  
+                         Source="{Binding StatusIcon4}"
+                        TranslationX="10"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Grid.RowSpan="2"                        
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ToggleStatusIcon4}"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+
+                    </Image>
+                    <Label
+                        Text="Advanced Lesson 4"
+                        TextColor="#ffffff"
+                        FontSize="20"
+                        TranslationX="12"
+                        TranslationY="2"
+                        Grid.Row="0"
+                        Grid.Column="3"
+                   
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Start">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavToNowPlaying}"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label
+                        Text="{Binding TextStatus4}"
+                        TextColor="#ffffff"
+                        FontSize="20"
+                         TranslationX="15"
+                        TranslationY="-5"
+                        Grid.Row="1"
+                       Grid.Column="3"
+                   
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Start">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavToNowPlaying}"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+
+
+
+            </StackLayout>
+
+
+          
+            <Grid VerticalOptions="End" HeightRequest="70" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0.9,1,1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.2"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*"/>
+                    <ColumnDefinition Width="0.9*"/>
+                    <ColumnDefinition Width="7.8*"/>
+                    <ColumnDefinition Width="0.9*"/>
+                    <ColumnDefinition Width="0.2*"/>
+                </Grid.ColumnDefinitions>
+                <BoxView HeightRequest="1" VerticalOptions="End" Color="#506887" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Margin="5,0,5,0"/>
+                <Image Source="check.png" Grid.Row="1" Grid.Column="1"/>
+                <Image Source="check.png" Grid.Row="1" Grid.Column="3">
+
+                </Image>
+                <Label Text="Ipsum praesent nulla dolore commodo" HorizontalTextAlignment="Center" TextColor="White" FontSize="11" VerticalTextAlignment="Start" Grid.Row="1" Grid.Column="2"/>
+                <Label Text="May 19, 2016 at 2:00 PM" HorizontalTextAlignment="Center" TextColor="White" FontSize="9" VerticalTextAlignment="End" Grid.Row="1" Grid.Column="2"/>
+            </Grid>
+
+        </AbsoluteLayout>
+        
+    </ContentPage.Content>
+
+</ContentPage>
